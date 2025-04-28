@@ -10,10 +10,16 @@
     - common
 
 - name: Yay common programs
-  shell: yay -S --noconfirm --needed google-chrome
+  shell: yay -S --noconfirm --needed google-chrome firefox spotify-launcher
   tags: 
     - install
     - common
+
+# - name: Flathub
+#   shell: flatpak install flathub 
+#   tags: 
+#     - install
+#     - common
 
 - name: Flatpak common programs
   shell: flatpak install flathub net.davidotek.pupgui2flatpak 

@@ -2,13 +2,13 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 26, // Waybar height (to be removed for auto height)
+    "height": 40, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
 
     // Choose the order of the modules
-    "modules-left": [ "hyprland/workspaces" ],
-    "modules-center": [ "clock" ],
-    "modules-right": [ "tray", "pulseaudio", "backlight", "battery", "custom/powermenu" ],
+    "modules-left": [ "hyprland/workspaces", "cpu", "temperature" ],
+    "modules-center": [  ],
+    "modules-right": [ "tray", "pulseaudio", "backlight", "battery", "custom/powermenu", "clock" ],
 
     "custom/launcher": {
         "format": "󰣇",
@@ -73,7 +73,7 @@
         "format-icons": ["", "", "", "", ""]
     },
     "clock": {
-        "timezone": "Asia/Kolkata",
+        "timezone": "America/Chicago",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         //"format": "   {:%a %b %d, %H:%M}",
         "format": "{:%a %b %d, %H:%M}",
