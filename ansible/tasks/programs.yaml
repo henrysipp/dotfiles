@@ -1,0 +1,22 @@
+- name: Common programs
+  become: true
+  pacman:
+    name:
+      - steam
+      - flatpak
+      - gamemode
+  tags:
+    - install
+    - common
+
+- name: Yay common programs
+  shell: yay -S --noconfirm --needed google-chrome
+  tags: 
+    - install
+    - common
+
+- name: Flatpak common programs
+  shell: flatpak install flathub net.davidotek.pupgui2flatpak 
+  tags: 
+    - install
+    - common

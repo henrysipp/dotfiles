@@ -12,7 +12,8 @@
       - pipewire-jack
       - pipewire-pulse
       - rsync
-      - gh
+      - stow
+    
   tags: 
     - install
     - core
@@ -26,6 +27,9 @@
       - nvidia-settings
     state: present
     update_cache: true
+  when: "'nvidia' in ansible_play_batch"
+  tags:
+    - nvidia
 
 - name: Enable DRM modeset
   become: true
@@ -36,7 +40,13 @@
     owner: root
     group: root
     mode: '0644'
+  tags:
+    - nvidia
 
 - name: Regenerate initramfs
   become: true
   command: mkinitcpio -P
+  when: "'nvidia' in ansible_play_batch"
+  tags:
+    - nvidia
+

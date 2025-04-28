@@ -15,4 +15,5 @@
     # - include: tasks/zsh.yaml
     - include_tasks: tasks/nvim.yaml
     - include_tasks: tasks/desktop.yaml
-    # - include: tasks/dotfiles.yaml
+    # - include_tasks: tasks/dotfiles.yaml
+    - include_tasks: tasks/programs.yaml

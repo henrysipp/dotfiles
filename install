@@ -1,3 +1,4 @@
 # ansible-playbook --ask-become-pass --ask-vault-password ./ansible/main.yaml
 
-ansible-playbook ./ansible/main.yaml
+ ansible-playbook --ask-become-pass ./ansible/main.yaml #--tags common
+
