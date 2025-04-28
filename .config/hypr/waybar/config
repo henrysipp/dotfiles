@@ -5,20 +5,32 @@
     "height": 40, // Waybar height (to be removed for auto height)
     "spacing": 2, // Gaps between modules (4px)
 
-    // Choose the order of the modules
-    "modules-left": [ "hyprland/workspaces", "cpu", "temperature" ],
+    "modules-left": [ 
+        "hyprland/workspaces", 
+        "custom/cpu-temp", 
+        "custom/gpu-usage"
+        // "temperature" 
+    ],
     "modules-center": [ 
     ],
     "modules-right": [ 
         "custom/gamemode",
         "tray", 
         "pulseaudio", 
-        "backlight", 
-        "battery", 
         "custom/powermenu", 
         "clock" 
     ],
 
+    "custom/gpu-usage": {
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+        "format": "GPU: {}%",
+        "interval": 5 
+    },
+    "custom/cpu-temp": {
+        "exec": "sensors | grep 'Package id 0:' | awk '{print $4}' | tr -d '+°C'",
+        "interval": 5,
+        "format": "CPU: {}°C"
+    },
     "custom/launcher": {
         "format": "󰣇",
         "on-click": "bemenu-run -p 'Run : '",
@@ -72,27 +84,11 @@
         "format": "{}",
         "tooltip": false
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon}   {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"]
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-charging": "{icon}  {capacity}% ",
-        "format-plugged": "{icon}  {capacity}% ",
-        "format-icons": ["", "", "", "", ""]
-    },
+  
     "clock": {
         "timezone": "America/Chicago",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        //"format": "   {:%a %b %d, %H:%M}",
-        "format": "{:%a %b %d, %H:%M}",
+        "format": "{:%a %b %d, %I:%M %p}",
         "interval": 60
     },
     "custom/powermenu": {

@@ -48,7 +48,9 @@
   #network,
   #backlight,
   #battery,
-  #clock {
+  #clock, 
+  #custom-cpu-temp,
+  #custom-gpu-usage {
     padding: 1 10px;
   }
   
