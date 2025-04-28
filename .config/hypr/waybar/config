@@ -7,8 +7,17 @@
 
     // Choose the order of the modules
     "modules-left": [ "hyprland/workspaces", "cpu", "temperature" ],
-    "modules-center": [  ],
-    "modules-right": [ "tray", "pulseaudio", "backlight", "battery", "custom/powermenu", "clock" ],
+    "modules-center": [ 
+    ],
+    "modules-right": [ 
+        "custom/gamemode",
+        "tray", 
+        "pulseaudio", 
+        "backlight", 
+        "battery", 
+        "custom/powermenu", 
+        "clock" 
+    ],
 
     "custom/launcher": {
         "format": "󰣇",
@@ -55,6 +64,13 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/gamemode": {
+        "exec": "if gamemodelist | grep -q 'PID'; then echo '󰓓'; else echo ''; fi",
+        "interval": 2,
+        "return-type": "json",
+        "format": "{}",
+        "tooltip": false
     },
     "backlight": {
         // "device": "acpi_video1",

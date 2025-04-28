@@ -11,6 +11,7 @@
       - pipewire-audio
       - pipewire-jack
       - pipewire-pulse
+      - pavucontrol
       - rsync
       - stow
     

@@ -21,7 +21,7 @@
     - desktop
 
 - name: Install Hyprland
-  shell: yay -S --noconfirm --needed hyprland hyprpaper hyprpicker waybar-hyprland xdg-desktop-portal-hyprland rofi-wayland
+  shell: yay -S --noconfirm --needed hyprland hyprpaper hyprpicker waybar-hyprland xdg-desktop-portal-hyprland
   tags: 
     - install
     - desktop
