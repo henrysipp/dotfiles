@@ -16,3 +16,27 @@
   tags: 
     - install
     - core
+
+- name: Install NVIDIA Open Kernel Drivers
+  become: true
+  pacman:
+    name:
+      - nvidia-open
+      - nvidia-utils
+      - nvidia-settings
+    state: present
+    update_cache: true
+
+- name: Enable DRM modeset
+  become: true
+  copy:
+    dest: /etc/modprobe.d/nvidia.conf
+    content: |
+      options nvidia-drm modeset=1
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Regenerate initramfs
+  become: true
+  command: mkinitcpio -P
