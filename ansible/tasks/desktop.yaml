@@ -20,8 +20,11 @@
     - install
     - desktop
 
-- name: Install Hyprland
-  shell: yay -S --noconfirm --needed hyprland hyprpaper hyprpicker hypridle hyprlock waybar-hyprland xdg-desktop-portal-hyprland 
+- name: Install Hyprland & Dependencies
+  shell: |
+    yay -S --noconfirm --needed hyprland hyprpaper hyprpicker \
+    hypridle hyprlock waybar-hyprland xdg-desktop-portal-hyprland \
+    nwg-look wlogout hyprcursor bibata-cursor-theme
   tags: 
     - install
     - desktop

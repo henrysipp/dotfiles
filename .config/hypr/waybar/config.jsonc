@@ -5,11 +5,11 @@
     "height": 40, 
     "spacing": 2,
     "modules-left": [ 
-        "hyprland/workspaces", 
         "custom/cpu-temp", 
         "custom/gpu-usage"
     ],
     "modules-center": [ 
+        "hyprland/workspaces", 
     ],
     "modules-right": [ 
         "custom/gamemode",
