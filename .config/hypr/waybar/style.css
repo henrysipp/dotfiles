@@ -3,13 +3,13 @@
     border-radius: 0;
     font-family: 'Roboto', 'Font Awesome 6 Free';
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   window#waybar {
     color: #eaeaea;
     background-color: rgba(0, 0, 0, 0.8);
-    /* background-color: #000000; */
+    /* background-color: #000001; */
   }
   
   #workspaces button {

@@ -5,6 +5,7 @@
       - steam
       - flatpak
       - gamemode
+      - vlc
   tags:
     - install
     - common
@@ -21,8 +22,8 @@
 #     - install
 #     - common
 
-- name: Flatpak common programs
-  shell: flatpak install flathub net.davidotek.pupgui2flatpak 
-  tags: 
-    - install
-    - common
+# - name: Flatpak common programs
+#   shell: flatpak install flathub net.davidotek.pupgui2flatpak 
+#   tags: 
+#     - install
+#     - common
