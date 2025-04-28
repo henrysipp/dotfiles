@@ -24,7 +24,8 @@
   shell: |
     yay -S --noconfirm --needed hyprland hyprpaper hyprpicker \
     hypridle hyprlock waybar-hyprland xdg-desktop-portal-hyprland \
-    nwg-look wlogout hyprcursor bibata-cursor-theme
+    nwg-look wlogout hyprcursor bibata-cursor-theme \
+    ttf-jetbrains-mono-nerd
   tags: 
     - install
     - desktop

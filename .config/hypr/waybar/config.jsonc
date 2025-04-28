@@ -1,23 +1,39 @@
-
+// -*- mode: jsonc -*-
 {
     "layer": "top",
     "position": "top",
-    "height": 40, 
-    "spacing": 2,
+    "mod": "dock",
+    "height": 30,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    // "width": 1200,
+    "margin-top": 10,
+    "margin-bottom": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+
     "modules-left": [ 
-        "custom/cpu-temp", 
-        "custom/gpu-usage",
-        "hyprland/workflows",
+        "custom/padding",
+        "custom/l_end", "custom/cpu-temp", "custom/gpu-usage", "custom/r_end",
+        "custom/padding",
     ],
-    "modules-center": [ 
-        "hyprland/workspaces", 
+
+    "modules-center": [
+        "custom/padding",
+        "custom/l_end", "hyprland/workspaces", "custom/r_end",
+        "custom/padding",
     ],
+
     "modules-right": [ 
-        "custom/gamemode",
-        "tray", 
-        "lseaudio", 
-        // "custom/powermenu", 
-        "clock" 
+        "custom/padding",
+        "custom/l_end", "tray", "custom/r_end",
+        "custom/padding",
+
+        "custom/l_end", "pulseaudio", "custom/r_end",
+        "custom/padding",
+        "custom/l_end", "clock", "custom/r_end",
+        "custom/padding",
     ],
 
     "custom/gpu-usage": {
@@ -30,17 +46,23 @@
         "interval": 5,
         "format": "CPU: {}°C"
     },
-    "custom/launcher": {
-        "format": "󰣇",
-        "on-click": "bemenu-run -p 'Run : '"
-    },
+  
     "hyprland/workspaces": {
-        "format": "{name}"
+        "format": "<span font='12px'>{icon}</span>",
+        "format-icons": {
+            "active": "<big></big>",
+            "default": "<big></big>"
+        },
+        "disable-scroll": true,
+        "rotate": 0,
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "*": 5
+        }
     },
-    "hyprland/window": {
-        "format": "{}",
-        "separate-outputs": true
-    },
+    
     "tray": {
         "icon-size": 20,
         "spacing": 10
@@ -92,8 +114,25 @@
         "format": "{:%a %b %d, %I:%M %p}",
         "interval": 60
     },
-    "custom/powermenu": {
-        "format": "",
-        "on-click": "sleep 0.2 && bemenu-logout",
+
+    // modules for padding //
+
+    "custom/l_end": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/r_end": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/padding": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
     }
+  
 }
