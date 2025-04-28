@@ -15,7 +15,7 @@
         "custom/gamemode",
         "tray", 
         "pulseaudio", 
-        "custom/powermenu", 
+        // "custom/powermenu", 
         "clock" 
     ],
 
