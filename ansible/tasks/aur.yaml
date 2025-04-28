@@ -1,0 +1,3 @@
+- name: Installing chaotic-aur repos.
+  become: true
+  shell: echo "TODO"

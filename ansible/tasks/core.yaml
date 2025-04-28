@@ -1,0 +1,17 @@
+- name: Install core programs.
+  become: true
+  pacman:
+    name:
+      - alsa-utils 
+      - base-develop
+      - btrfs-progs
+      - git
+      - pipewire
+      - pipewire-alsa
+      - pipewire-audio
+      - pipewire-jack
+      - pipewire-pulse
+      - rsync
+  tags: 
+    - install
+    - core

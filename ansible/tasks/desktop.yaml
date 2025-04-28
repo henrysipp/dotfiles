@@ -1,0 +1,27 @@
+- name: Install programs from pacman for desktop
+  become: true
+  pacman:
+    name:
+      - brightnessctl
+      - dunst
+      - ghostty
+      - dolphin
+      - qt5-wayland
+      - qt6-wayland
+#      - wayland
+#      - wayland-protocols
+  tags:
+    - install
+    - desktop
+
+- name: Install programs from aur for desktop.
+  shell: yay -S --noconfirm --needed auto-cpufreq google-chrome 
+  tags: 
+    - install
+    - desktop
+
+- name: Install Hyprland
+  shell: yay -S --noconfirm --needed hyprland hyprpaper hyprpicker waybar-hyprland xdg-desktop-portal-hyprland
+  tags: 
+    - install
+    - desktop
