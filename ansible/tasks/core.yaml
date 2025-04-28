@@ -3,7 +3,7 @@
   pacman:
     name:
       - alsa-utils 
-      - base-develop
+      - base-devel
       - btrfs-progs
       - git
       - pipewire
@@ -12,6 +12,7 @@
       - pipewire-jack
       - pipewire-pulse
       - rsync
+      - gh
   tags: 
     - install
     - core

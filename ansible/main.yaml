@@ -10,9 +10,9 @@
         update_cache: true
       tags: install
   tasks:
-    - include: tasks/core.yaml
-    - include: tasks/ssh.yaml
-    - include: tasks/zsh.yaml
-    - include: tasks/nvim.yaml
-    - include: tasks/desktop.yaml
+    - include_tasks: ./tasks/core.yaml
+    # - include: tasks/ssh.yaml
+    # - include: tasks/zsh.yaml
+    - include_tasks: tasks/nvim.yaml
+    - include_tasks: tasks/desktop.yaml
     # - include: tasks/dotfiles.yaml

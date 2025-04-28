@@ -1,9 +1,9 @@
-- name: Clone dotfiles
-  ansible.builtin.git:
-    repo: ""
-    separate_git_dir: "{{ lookup('env', 'HOME') }}/.dotfiles.git"
-    dest: "/tmp/dotfiles"
-    recursive: yes
-    update: yes
-    accept_hostkey: yes
-    version: main
+# - name: Clone dotfiles
+#   ansible.builtin.git:
+#     repo: ""
+#     separate_git_dir: "{{ lookup('env', 'HOME') }}/.dotfiles.git"
+#     dest: "/tmp/dotfiles"
+#     recursive: yes
+#     update: yes
+#     accept_hostkey: yes
+#     version: main
