@@ -24,6 +24,16 @@ export QT_DPI=137
 
 export ELECTRON_OZONE_PLATFORM_HINT=auto
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  sleep 1 && exec Hyprland
+if [[ -z $WAYLAND_DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  export XDG_SESSION_TYPE=wayland
+  export XDG_CURRENT_DESKTOP=Hyprland
+  export XDG_SESSION_DESKTOP=Hyprland
+  export GDK_BACKEND=wayland
+  export QT_QPA_PLATFORM=wayland
+  export SDL_VIDEODRIVER=wayland
+  export CLUTTER_BACKEND=wayland
+  export MOZ_ENABLE_WAYLAND=1
+  sleep 1
+  exec dbus-run-session Hyprland
 fi
+

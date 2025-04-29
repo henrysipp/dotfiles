@@ -3,7 +3,6 @@
   pacman:
     name:
       - brightnessctl
-      - dunst
       - ghostty
       - dolphin
       - qt5-wayland
@@ -24,8 +23,44 @@
   shell: |
     yay -S --noconfirm --needed hyprland hyprpaper hyprpicker \
     hypridle hyprlock waybar-hyprland xdg-desktop-portal-hyprland \
-    nwg-look wlogout hyprcursor bibata-cursor-theme \
+    nwg-look wlogout hyprcursor bibata-cursor-theme dunst \
     ttf-jetbrains-mono-nerd
+  when: "'hyprland' in ansible_play_batch"
+  tags: 
+    - install
+    - desktop
+
+
+- name: Install KDE & Dependencies
+  pacman:
+    name:
+      - plasma-desktop
+      - plasma-pa
+      - plasma-nm
+      - plasma-systemmonitor
+      - plasma-firewall
+      - plasma-browser-integration 
+      - kscreen
+      - kwalletmanager
+      - kwallet-pam
+      - bluedevil
+      - powerdevil
+      - power-profiles-daemon
+      - kdeplasma-addons
+      - xdg-desktop-portal-kde
+      - xwaylandvideobridge
+      - kde-gtk-config
+      - breeze-gtk
+      # - cups, printmanager
+      - ffmpegthumbs
+      - kate
+      - okular
+      - gwenview
+      - ark
+      - spectacle
+      - dragon
+
+  when: "'plasma' in ansible_play_batch"
   tags: 
     - install
     - desktop

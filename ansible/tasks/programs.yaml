@@ -12,7 +12,9 @@
     - common
 
 - name: Yay common programs
-  shell: yay -S --noconfirm --needed google-chrome firefox spotify-launcher 1password
+  shell: |
+    yay -S --noconfirm --needed google-chrome firefox |
+    spotify-launcher 1password
   tags:
     - install
     - common

@@ -34,6 +34,8 @@
         "custom/padding",
         "custom/l_end", "clock", "custom/r_end",
         "custom/padding",
+        "custom/l_end", "custom/power", "custom/r_end",
+        "custom/padding",
     ],
 
     "custom/gpu-usage": {
@@ -107,6 +109,12 @@
         "return-type": "json",
         "format": "{}",
         "tooltip": false
+    },
+    "custom/power": {
+        "format": "⏻",
+        "interval": "once",
+        "tooltip": false,
+        "on-click": "wlogout"
     },
     "clock": {
         "timezone": "America/Chicago",
