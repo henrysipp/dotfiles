@@ -9,4 +9,4 @@ sudo pacman -S --needed --noconfirm hyprland dunst \
 # Fun extras to make it usable
 yay -S --noconfirm --needed hyprpicker hypridle \
     waybar waybar-hyprland wlogout hyprcursor \
-    hyprpaper hyprlock
+    hyprpaper hyprlock pavucontrol

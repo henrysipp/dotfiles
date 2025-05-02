@@ -1,3 +1,5 @@
 
 Ostensibly some dotfiles for my arch install.
-I'm really new to all this though so don't judge :P
+Not really deterministic at all, just kind of winging it as I go so probably broken.
+
+Running archinstall is a pre-requisite. I'm not messing around w/ like NVidia drivers.
