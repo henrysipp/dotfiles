@@ -8,7 +8,7 @@
 
 window#waybar {
     background: #1d2021;
-    /* border-radius: 10px; */
+    border-radius: 10px;
 }
 
 #workspaces button {
