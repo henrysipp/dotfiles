@@ -10,11 +10,11 @@
 	  "format": "CPU: {}°C",
 	},
 	"hyprland/workspaces": {
-	  "format": "<span font='8px'>{icon}</span>",
-	  "format-icons": {
-	    "active": "<big></big>",
-	    "default": "<big></big>",
-	  },
+	  // "format": "<span font='8px'>{icon}</span>",
+	  // "format-icons": {
+	  //   "active": "<big></big>",
+	  //   "default": "<big></big>",
+	  // },
 	  "disable-scroll": true,
 	  "rotate": 0,
 	  "all-outputs": true,
