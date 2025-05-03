@@ -3,25 +3,43 @@
     border: none;
     border-radius: 0px;
     font-size: 16px;
-    min-height: 30px;
 }
 
 window#waybar {
-    background: #1d2021;
-    border-radius: 10px;
+    background: rgba(50, 50, 55, 0.8);
+    border-radius: 8px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left {
+    background: #282828;
+    border-radius: 6px;
+    margin: 0.5rem;
+    padding: 0 1rem;
+}
+
+.modules-center {
+    background: #282828;
+    border-radius: 6px;
+    margin: 0.5rem;
+    padding: 0 1rem;
+}
+
+.modules-right {
+    background: #282828;
+    border-radius: 6px;
+    margin: 0.5rem;
+    padding: 0 1rem;
 }
 
 #workspaces button {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-left: 0px;
-    padding-left: 6px;
-    padding-right: 10px;
-    margin-right: 0px;
-    color: #504945;
+    margin: 0px 8px;
     animation: ws_normal 20s ease-in-out 1;
 }
 
@@ -45,7 +63,6 @@ window#waybar {
     color: #83a598;
 }
 
-#battery,
 #clock,
 #cpu,
 #memory,
@@ -54,17 +71,13 @@ window#waybar {
 #pulseaudio,
 #temperature,
 #workspaces,
-#custom-l_end,
-#custom-logo,
 #custom-power,
 #custom-audio-icon,
 #custom-network-icon,
 #custom-cpu-temp,
 #custom-gpu-usage,
-#custom-memory-icon,
-#custom-r_end {
+#custom-memory-icon {
     color: #fbf1c7;
-    background: #282828;
     opacity: 1;
     margin: 8px 0px 8px 0px;
     padding-left: 4px;
@@ -79,14 +92,3 @@ window#waybar {
     color: #504945;
 }
 
-#custom-l_end {
-    border-radius: 7px 0 0 7px;
-}
-
-#custom-r_end {
-    border-radius: 0 7px 7px 0;
-}
-
-#custom-padding {
-    /* margin-left: 0.25rem; */
-}
