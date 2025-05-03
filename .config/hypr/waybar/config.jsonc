@@ -115,6 +115,7 @@
       "default": ["", "", ""],
     },
     "on-click": "pavucontrol",
+    // "on-click": "flatpak run com.saivert.pwvucontrol",
   },
   "custom/gamemode": {
     "exec": "if gamemodelist | grep -q 'PID'; then echo '󰓓'; else echo ''; fi",

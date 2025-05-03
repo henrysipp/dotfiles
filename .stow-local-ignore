@@ -1,3 +1,8 @@
 .git
 ansible
 scripts
+
+install.sh
+install-ansible
+readme.md
+.stow-local-ignore
