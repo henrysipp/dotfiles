@@ -39,7 +39,7 @@ window#waybar.hidden {
     box-shadow: none;
     text-shadow: none;
     padding: 0px;
-    margin: 0px 8px;
+    margin: 0px 8px 0px 8px;
     animation: ws_normal 20s ease-in-out 1;
 }
 
@@ -53,7 +53,7 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-    background: #504945;
+    /* background: #504945; */
     color: #fbf1c7;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
