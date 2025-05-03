@@ -6,12 +6,12 @@
 }
 
 window#waybar {
-    background: rgba(50, 50, 55, 0.8);
+    background: transparent;
+/*    background: rgba(50, 50, 55, 0.8);*/
     border-radius: 8px;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
 }
 
 .modules-left {
