@@ -1,3 +1,6 @@
+@define-color background #282828;
+@define-color foreground #FAFAFA;
+
 * {
     font-family: "Jetbrains Mono Nerd Font";
     border: none;
@@ -15,7 +18,7 @@ window#waybar.hidden {
 }
 
 .modules-left {
-    background: #282828;
+    background: @background;
     border-radius: 0.5rem;
     margin: 0.5rem;
     padding: 0 1rem;
@@ -64,7 +67,7 @@ window#waybar.hidden {
 #workspaces button.active:hover {
     color: #83a598;
 }
-
+ 
 #clock,
 #cpu,
 #memory,

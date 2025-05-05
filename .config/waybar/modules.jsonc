@@ -15,6 +15,7 @@
 	  //   "active": "<big></big>",
 	  //   "default": "<big></big>",
 	  // },
+	  "disable-scroll": false,
 	  "all-outputs": true,
 	  "active-only": false,
 	  "on-click": "activate",
