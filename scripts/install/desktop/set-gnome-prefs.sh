@@ -1,1 +1,5 @@
+# Center new windows in the middle of the screen
+gsettings set org.gnome.mutter center-new-windows true
+
+# Resize apps with right mouse button and move them with left
 gsettings set org.gnome.desktop.wm.preferences resize-with-right-button "true"
