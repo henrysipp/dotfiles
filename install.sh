@@ -11,5 +11,5 @@ export PROJECT_ROOT
 
 echo "Installing terminal and desktop tools..."
 
-source "${PROJECT_ROOT}/install/terminal.sh"
-source "${PROJECT_ROOT}/install/desktop.sh"
+source ~/.local/share/omakase/install/terminal.sh
+source ~/.local/share/omakase/install/desktop.sh
