@@ -16,7 +16,7 @@ cd -
 # if [[ $OMAKUB_REF != "master" ]]; then
 # 	cd ~/.local/share/omakase
 # 	git fetch origin "${OMAKUB_REF:-stable}" && git checkout "${OMAKUB_REF:-stable}"
-# 	cd -
+# 	cd ->term
 # fi
 
 echo "Installation starting..."
