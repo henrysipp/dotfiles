@@ -24,16 +24,17 @@
     "tray",
     "cpu",
     "custom/cpu",
-    "custom/gpu",
+    "custom/gpu"
   ],
 
   "modules-center": [
-    "hyprland/workspaces",
+    "hyprland/workspaces"
   ],
 
   "modules-right": [
     "pulseaudio",
+    "battery",
     "clock",
-    "custom/power",
+    "custom/power"
   ],
 }
