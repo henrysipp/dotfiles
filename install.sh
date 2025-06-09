@@ -11,7 +11,7 @@ source "${PROJECT_ROOT}/install/first-run-choices.sh"
 
 echo "Installing terminal and desktop tools..."
 
-# source "${PROJECT_ROOT}/install/terminal.sh"
+source "${PROJECT_ROOT}/install/terminal.sh"
 source "${PROJECT_ROOT}/install/desktop.sh"
 # source "${PROJECT_ROOT}/install/framework.sh"
 

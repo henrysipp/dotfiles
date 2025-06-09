@@ -21,17 +21,17 @@
 
   // Modules!
   "modules-left": [
-    "tray",
-    "cpu",
-    "custom/cpu",
-    "custom/gpu"
-  ],
-
-  "modules-center": [
+    // "cpu",
+    // "custom/cpu",
+    // "custom/gpu",
     "hyprland/workspaces"
   ],
 
+  "modules-center": [
+  ],
+
   "modules-right": [
+    "tray",
     "pulseaudio",
     "battery",
     "clock",

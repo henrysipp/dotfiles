@@ -1,0 +1,30 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+$selected-color: #{"@theme_selected_bg_color"};
+$selected-fg-color: #{"@theme_selected_fb_color"};
+
+window.Bar {
+    background: transparent;
+    color: white; // $fg-color;
+    font-weight: bold;
+
+    >centerbox {
+        // background: $bg-color;
+        border-radius: 10px;
+        margin: 8px;
+    }
+
+    button {
+        border-radius: 8px;
+        margin: 2px;
+    }
+
+    .hypr-button {
+        // background: $bg-color;
+    }
+    .hypr-button--active {
+        background: $selected-color;
+        color: $selected-fg-color;
+    }
+}

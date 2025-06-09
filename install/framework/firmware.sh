@@ -1,1 +1,1 @@
-pacman -S fwupd
+pacman -S --needed --noconfirm fwupd
