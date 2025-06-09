@@ -10,3 +10,7 @@
 # AVAILABLE_DBS=("MySQL" "Redis" "PostgreSQL")
 # SELECTED_DBS="MySQL,Redis"
 # export OMAKUB_FIRST_RUN_DBS=$(gum choose "${AVAILABLE_DBS[@]}" --no-limit --selected "$SELECTED_DBS" --height 5 --header "Select databases (runs in Docker)")
+
+AVAILABLE_DESKTOPS=("Gnome" "Hyprland")
+SELECTED_DESKTOP="Hyprland"
+export OMAKASE_SELECTED_DESKTOP=$(gum choose "${AVAILABLE_DESKTOPS[@]}" --selected "$SELECTED_DESKTOP" --height 5 --header "Select desktop environment")

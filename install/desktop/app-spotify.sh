@@ -1,1 +1,1 @@
-yay -S --needed --noconfirm spotify-launcher
+flatpak install -y flathub com.spotify.Client
