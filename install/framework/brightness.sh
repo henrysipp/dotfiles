@@ -1,2 +1,2 @@
 usermod -a -G video $USER
-pacman -S --noconfirm brightnessctl
+pacman -S --needed --noconfirm brightnessctl

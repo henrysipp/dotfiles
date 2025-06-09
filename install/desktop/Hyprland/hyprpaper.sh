@@ -1,1 +1,1 @@
-pacman -S --noconfirm hyprpaper
+pacman -S --needed --noconfirm hyprpaper

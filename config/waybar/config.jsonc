@@ -16,8 +16,8 @@
   // Base styling for outer container
   "margin-top": 8,
   "margin-bottom": 0,
-  "margin-left": 16,
-  "margin-right": 16,
+  "margin-left": 8,
+  "margin-right": 8,
 
   // Modules!
   "modules-left": [

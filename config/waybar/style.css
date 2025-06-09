@@ -9,8 +9,8 @@
 }
 
 window#waybar {
-    background: transparent;
-/*    background: rgba(50, 50, 55, 0.8);*/
+    /* background: transparent; */
+   background: @background;
     border-radius: 8px;
 }
 
@@ -20,21 +20,21 @@ window#waybar.hidden {
 .modules-left {
     background: @background;
     border-radius: 0.5rem;
-    margin: 0.5rem;
+    margin: 0rem;
     padding: 0 1rem;
 }
 
 .modules-center {
     background: #282828;
     border-radius: 0.5rem;
-    margin: 0.5rem;
+    margin: 0rem;
     padding: 0 1rem;
 }
 
 .modules-right {
     background: #282828;
     border-radius: 0.5rem;
-    margin: 0.5rem;
+    margin: 0rem;
     padding: 0 1rem;
 }
 

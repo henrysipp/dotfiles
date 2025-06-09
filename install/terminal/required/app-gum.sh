@@ -1,1 +1,1 @@
-pacman -S --noconfirm gum
+pacman -S --needed --noconfirm gum

@@ -1,1 +1,1 @@
-sudo pacman -S --needed --noconfirm sublime-text
+sudo pacman -S --needed --noconfirm sublime-text-4
