@@ -15,5 +15,6 @@ echo "Installing terminal and desktop tools..."
 source "${PROJECT_ROOT}/install/desktop.sh"
 # source "${PROJECT_ROOT}/install/framework.sh"
 
+
 # Logout to pickup changes
 # gum confirm "Ready to reboot for all settings to take effect?" && sudo reboot
