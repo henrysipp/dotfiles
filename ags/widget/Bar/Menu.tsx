@@ -30,18 +30,17 @@ function WifiButton() {
   });
 
   return (
-    <box spacing={12} hexpand>
+    <box spacing={8} hexpand cssClasses={["menu__button-row"]}>
       <button
         cssClasses={wifiClasses}
         onClicked={() => {
           net.wifi.set_enabled(!net.wifi.get_enabled());
         }}
       >
-        {wifiIcon}
-        
+        <label cssClasses={["menu__button-icon"]}>{wifiIcon}</label>
       </button>
-      <box vertical halign={Gtk.Align.START}>
-        <label halign={Gtk.Align.START} cssClasses={["label--primary"]}>Wifi</label>
+      <box vertical halign={Gtk.Align.START} hexpand>
+        <label halign={Gtk.Align.START} cssClasses={["label--primary"]}>Wi-Fi</label>
         <label halign={Gtk.Align.START} cssClasses={["label--secondary"]}>Sipp_Wifi</label>
       </box>
     </box>
@@ -66,16 +65,16 @@ function BluetoothButton() {
   );
 
   return (
-    <box spacing={12} hexpand>
+    <box spacing={12} hexpand cssClasses={["menu__button-row"]}>
       <button
         cssClasses={bluetoothClasses}
         onClicked={() => {
           bluetooth.toggle();
         }}
       >
-        {bluetoothIcon}
+        <label cssClasses={["menu__button-icon"]}>{bluetoothIcon}</label>
       </button>
-      <box vertical halign={Gtk.Align.START}>
+      <box vertical halign={Gtk.Align.START} hexpand>
         <label halign={Gtk.Align.START} cssClasses={["label--primary"]}>Bluetooth</label>
         <label halign={Gtk.Align.START} cssClasses={["label--secondary"]}>{bluetoothStatus}</label>
       </box>
@@ -89,22 +88,30 @@ export function Menu() {
 
   return (
     <menubutton cssClasses={["menu"]}>
-      <label>{"󰣇"}</label>
+      <label cssClasses={["menu__trigger-icon"]}>{"󰣇"}</label>
       <popover cssClasses={["menu__popover"]}>
-        <box widthRequest={400} orientation={1} cssClasses={["menu__popover-container"]}>
+        <box widthRequest={420} orientation={1} cssClasses={["menu__popover-container"]}>
           <box spacing={8}>
             <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
               <WifiButton />
               <BluetoothButton />
             </box>
             <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
-              <button cssClasses={["menu__nightmode-btn"]}>Night Mode</button>
+              <button cssClasses={["menu__nightmode-btn"]}>
+                  <label cssClasses={["menu__nightmode-icon"]}>󰃚</label>
+                  <label>Night Mode</label>
+              </button>
             </box>
           </box>
-          <box vertical spacing={4} cssClasses={["menu__popover-panel"]}>
-            <label 
-            cssClasses={["label--primary", "label--primary--title"]} 
-            halign={Gtk.Align.START}>Display</label>
+          <box cssClasses={["menu__separator"]} />
+          <box vertical spacing={8} cssClasses={["menu__popover-panel"]}>
+            <box spacing={8}>
+              <label cssClasses={["menu__slider-icon"]}>󰃠</label>
+              <label 
+                cssClasses={["label--primary", "label--primary--title"]} 
+                halign={Gtk.Align.START}
+                hexpand>Display</label>
+            </box>
             <slider
               value={bind(brightness, "screen")}
               max={bind(brightness, "screenMax")}
@@ -113,10 +120,15 @@ export function Menu() {
               }}
             />
           </box>
-          <box vertical spacing={4} cssClasses={["menu__popover-panel"]}>
-            <label 
-            cssClasses={["menu__label--primary", "menu__label--primary--title"]} 
-            halign={Gtk.Align.START}>Sound</label>
+          <box cssClasses={["menu__separator"]} />
+          <box vertical spacing={8} cssClasses={["menu__popover-panel"]}>
+            <box spacing={8}>
+              <label cssClasses={["menu__slider-icon"]}>󰕾</label>
+              <label 
+                cssClasses={["label--primary", "label--primary--title"]} 
+                halign={Gtk.Align.START}
+                hexpand>Sound</label>
+            </box>
             <slider
               value={bind(volume, "volume")}
               max={bind(volume, "volumeMax")}

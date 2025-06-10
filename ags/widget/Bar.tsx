@@ -23,8 +23,8 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
         <box />
         <box>
           <Tray />
-          <DateTime />
           <Battery />
+          <DateTime />
           <Menu />
         </box>
       </centerbox>

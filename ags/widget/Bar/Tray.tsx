@@ -11,6 +11,7 @@ function renderTrayItem(item: AstalTray.TrayItem) {
     popover,
     child: icon,
     cssClasses: ["items"],
+    tooltipText: item.tooltip_markup || item.title || item.id,
   });
 
   item.bind_property("gicon", icon, "gicon", SYNC);
