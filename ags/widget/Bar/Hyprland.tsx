@@ -26,6 +26,11 @@ export default function Hyprland() {
           </button>
         ));
       })}
+      <label>
+        {bind(hyprland, "focusedClient").as(client => 
+          client ? client.initialTitle : ""
+        )}
+      </label>
     </box>
   )
 }

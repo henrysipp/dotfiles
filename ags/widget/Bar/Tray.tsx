@@ -28,7 +28,7 @@ export default function Tray() {
   const tray = AstalTray.get_default();
 
   return (
-    <box>
+    <box cssClasses={["tray"]}>
       {bind(tray, "items").as((items) =>
         items.map((item) => {
           return renderTrayItem(item);

@@ -3,6 +3,7 @@ import Hyprland from "./Bar/Hyprland";
 import Tray from "./Bar/Tray";
 import Battery from "./Bar/Battery";
 import DateTime from "./Bar/DateTime";
+import { Menu } from "./Bar/Menu";
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, LEFT, RIGHT } = Astal.WindowAnchor;
@@ -24,6 +25,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
           <Tray />
           <DateTime />
           <Battery />
+          <Menu />
         </box>
       </centerbox>
     </window>
