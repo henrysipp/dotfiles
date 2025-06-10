@@ -4,6 +4,22 @@ $bg-color: #{"@theme_bg_color"};
 $selected-color: #{"@theme_selected_bg_color"};
 $selected-fg-color: #{"@theme_selected_fb_color"};
 
+// Common label styles
+.label--primary {
+  font-weight: bold;
+  font-size: 14px;
+  
+  &--title {
+    margin: 0 8px;
+  }
+}
+
+.label--secondary {
+  font-weight: normal;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
 window.Bar {
   background: transparent;
   color: white; // $fg-color;
@@ -48,13 +64,13 @@ window.Bar {
 
   .menu {
     &__popover-container {
-      margin: 8px;
+      // margin: 8px;
     }
     &__popover-panel {
       margin: 8px;
       background: rgba(0, 0, 0, 0.1);
       border-radius: 8px;
-      padding: 8px;
+      padding: 12px;
     }
     &__wifi-btn {
       min-width: 24px;
@@ -98,14 +114,64 @@ window.Bar {
     }
     &__nightmode-btn {
     }
-    &__label--primary {
-      font-weight: bold;
-      font-size: 14px;
+    
+    scale {
+      margin: 0 -4px;
+      trough {
+        min-height: 16px;
+        border-radius: 8px;
+        background: rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        
+        highlight {
+          background: white;
+          // background: $selected-color;
+          border-radius: 8px;
+        }
+      }
+      
+      slider {
+        min-width: 20px;
+        min-height: 20px;
+        border-radius: 50%;
+        background: white;
+      }
     }
-    &__label--secondary {
-      font-weight: normal;
-      font-size: 12px;
-      opacity: 0.7;
+  }
+
+  .battery {
+    &__popover-container {
+      // margin: 12px;
+      min-width: 280px;
+    }
+    
+    &__profile-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      
+      &--inactive {
+        background: transparent;
+        
+        &:hover {
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+      
+      &--active {
+        background: $selected-color;
+        color: $selected-fg-color;
+        
+        &:hover {
+          background: $selected-color;
+          opacity: 0.9;
+        }
+      }
+    }
+    
+    &__profile-icon {
+      font-size: 24px;
+      min-width: 32px;
     }
   }
 }

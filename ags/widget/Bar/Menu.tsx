@@ -3,6 +3,7 @@ import Bluetooth from "gi://AstalBluetooth";
 import { bind } from "astal";
 import { Gtk } from "astal/gtk4";
 import Brightness from "./Brightness";
+import Volume from "./Volume";
 
 function WifiButton() {
   const net = Network.get_default();
@@ -40,8 +41,8 @@ function WifiButton() {
         
       </button>
       <box vertical halign={Gtk.Align.START}>
-        <label halign={Gtk.Align.START} cssClasses={["menu__label--primary"]}>Wifi</label>
-        <label halign={Gtk.Align.START} cssClasses={["menu__label--secondary"]}>Sipp_Wifi</label>
+        <label halign={Gtk.Align.START} cssClasses={["label--primary"]}>Wifi</label>
+        <label halign={Gtk.Align.START} cssClasses={["label--secondary"]}>Sipp_Wifi</label>
       </box>
     </box>
   );
@@ -75,8 +76,8 @@ function BluetoothButton() {
         {bluetoothIcon}
       </button>
       <box vertical halign={Gtk.Align.START}>
-        <label halign={Gtk.Align.START} cssClasses={["menu__label--primary"]}>Bluetooth</label>
-        <label halign={Gtk.Align.START} cssClasses={["menu__label--secondary"]}>{bluetoothStatus}</label>
+        <label halign={Gtk.Align.START} cssClasses={["label--primary"]}>Bluetooth</label>
+        <label halign={Gtk.Align.START} cssClasses={["label--secondary"]}>{bluetoothStatus}</label>
       </box>
     </box>
   );
@@ -84,13 +85,13 @@ function BluetoothButton() {
 
 export function Menu() {
   const brightness = new Brightness();
+  const volume = new Volume();
 
   return (
     <menubutton cssClasses={["menu"]}>
       <label>{"󰣇"}</label>
       <popover cssClasses={["menu__popover"]}>
         <box widthRequest={400} orientation={1} cssClasses={["menu__popover-container"]}>
-          <label>okie</label>
           <box spacing={8}>
             <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
               <WifiButton />
@@ -100,8 +101,10 @@ export function Menu() {
               <button cssClasses={["menu__nightmode-btn"]}>Night Mode</button>
             </box>
           </box>
-          <box orientation={1}>
-            <label>Display</label>
+          <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
+            <label 
+            cssClasses={["label--primary", "label--primary--title"]} 
+            halign={Gtk.Align.START}>Display</label>
             <slider
               widthRequest={100}
               value={bind(brightness, "screen")}
@@ -111,11 +114,17 @@ export function Menu() {
               }}
             />
           </box>
-          <box orientation={1}>
-            <label>Sound</label>
+          <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
+            <label 
+            cssClasses={["menu__label--primary", "menu__label--primary--title"]} 
+            halign={Gtk.Align.START}>Sound</label>
             <slider
               widthRequest={100}
-              onNotifyValue={(self) => print("new value", self.value)}
+              value={bind(volume, "volume")}
+              max={bind(volume, "volumeMax")}
+              onChangeValue={(self) => {
+                volume.setVolume(self.value);
+              }}
             />
           </box>
         </box>
