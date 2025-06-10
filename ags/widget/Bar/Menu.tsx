@@ -101,12 +101,11 @@ export function Menu() {
               <button cssClasses={["menu__nightmode-btn"]}>Night Mode</button>
             </box>
           </box>
-          <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
+          <box vertical spacing={4} cssClasses={["menu__popover-panel"]}>
             <label 
             cssClasses={["label--primary", "label--primary--title"]} 
             halign={Gtk.Align.START}>Display</label>
             <slider
-              widthRequest={100}
               value={bind(brightness, "screen")}
               max={bind(brightness, "screenMax")}
               onChangeValue={(self) => {
@@ -114,12 +113,11 @@ export function Menu() {
               }}
             />
           </box>
-          <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
+          <box vertical spacing={4} cssClasses={["menu__popover-panel"]}>
             <label 
             cssClasses={["menu__label--primary", "menu__label--primary--title"]} 
             halign={Gtk.Align.START}>Sound</label>
             <slider
-              widthRequest={100}
               value={bind(volume, "volume")}
               max={bind(volume, "volumeMax")}
               onChangeValue={(self) => {
