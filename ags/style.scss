@@ -5,7 +5,7 @@ $selected-color: #{"@theme_selected_bg_color"};
 $selected-fg-color: #{"@theme_selected_fb_color"};
 
 window.Bar {
-  background: transparentj;
+  background: transparent;
   color: white; // $fg-color;
   font-weight: bold;
 
@@ -46,21 +46,99 @@ window.Bar {
   }
 
 
-  .menu__popover-container {
-    margin: 8px;
-  }
-  .menu__wifi-btn {
-    &--connected {
-      background-color: $selected-color;
-      color: $selected-fg-color;
+  .menu {
+    &__popover-container {
+      margin: 8px;
+    }
+    &__popover-panel {
+      margin: 8px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 8px;
+    }
+    &__wifi-btn {
+      min-width: 24px;
+      min-height: 24px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      
+      &--connected {
+        background-color: $selected-color;
+        color: $selected-fg-color;
+        
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    &__bluetooth-btn {
+      min-width: 24px;
+      min-height: 24px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      
+      &--enabled {
+        background-color: $selected-color;
+        color: $selected-fg-color;
+        
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+    &__nightmode-btn {
+    }
+    &__label--primary {
+      font-weight: bold;
+      font-size: 14px;
+    }
+    &__label--secondary {
+      font-weight: normal;
+      font-size: 12px;
+      opacity: 0.7;
     }
   }
-  .menu__bluetooth-btn {
-    &--enabled {
-      background-color: $selected-color;
-      color: $selected-fg-color;
+}
+
+window.Dock {
+  background: transparent;
+  
+  .dock {
+    .dock-content {
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 12px;
+      padding: 8px;
+      margin-bottom: 4px;
     }
-  }
-  .menu__nightmode-btn {
+    
+    .dock-button {
+      background: transparent;
+      border-radius: 8px;
+      margin: 4px;
+      padding: 8px;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+    
+    .dock-trigger {
+      min-height: 4px;
+      max-height: 4px;
+      height: 4px;
+      /* Prevent the trigger from expanding */
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
   }
 }
