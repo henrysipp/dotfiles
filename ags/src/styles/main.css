@@ -39,7 +39,7 @@ button {
 }
 
 label {
-  @apply text-on_surface;
+  /* @apply text-on_surface; */
 }
 
 tooltip.background {

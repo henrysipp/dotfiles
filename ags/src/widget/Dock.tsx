@@ -22,7 +22,7 @@ export default function Dock(gdkmonitor: Gdk.Monitor) {
   return (
     <window
       visible
-      cssClasses={["Dock"]}
+      cssClasses={["bg-transparent"]}
       gdkmonitor={gdkmonitor}
       exclusivity={Astal.Exclusivity.IGNORE}
       anchor={BOTTOM | LEFT | RIGHT}
@@ -32,7 +32,7 @@ export default function Dock(gdkmonitor: Gdk.Monitor) {
         <box />
         <box 
           orientation={0} 
-          cssClasses={["dock"]}
+          cssClasses={[]}
           onHoverEnter={() => isVisible.set(true)}
           onHoverLeave={() => isVisible.set(false)}
         >
@@ -41,14 +41,14 @@ export default function Dock(gdkmonitor: Gdk.Monitor) {
             transitionDuration={200}
             transitionType={Gtk.RevealerTransitionType.SLIDE_UP}
           >
-            <box className="dock-content">
+            <box cssClasses={["bg-black/80", "rounded-xl", "p-2", "mb-1"]}>
               {apps
                 .get_list()
                 .filter((app) => pinnedApps.includes(app.name))
                 .map((app) => {
                   return (
                     <button
-                      className="dock-button"
+                      cssClasses={["bg-transparent", "rounded-lg", "m-1", "p-2", "transition-all", "duration-200", "hover:bg-white/10"]}
                       onClicked={() => app.launch()}
                       tooltip={app.name}
                     >
@@ -60,7 +60,7 @@ export default function Dock(gdkmonitor: Gdk.Monitor) {
           </revealer>
           <box widthRequest={300}
           heightRequest={4}
-            cssClasses={["dock-trigger"]}
+            cssClasses={["min-h-1", "max-h-1", "h-1", "flex-shrink-0", "flex-grow-0"]}
           >
             <label></label>
           </box>

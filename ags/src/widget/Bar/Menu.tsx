@@ -10,8 +10,8 @@ function WifiButton() {
 
   const wifiClasses = bind(net, "state").as((state) =>
     state == Network.State.CONNECTED_GLOBAL
-      ? ["menu__wifi-btn", "menu__wifi-btn--connected"]
-      : ["menu__wifi-btn", "menu__wifi-btn--disconnected"]
+      ? ["bg-primary", "text-on_primary", "rounded-lg", "p-2", "min-w-[32px]", "min-h-[32px]", "transition-all", "duration-200", "border", "border-white/15"]
+      : ["bg-white/[0.06]", "rounded-lg", "p-2", "min-w-[32px]", "min-h-[32px]", "transition-all", "duration-200", "hover:bg-white/[0.12]"]
   );
 
   const wifiIcon = bind(net, "state").as((state) => {
@@ -30,18 +30,18 @@ function WifiButton() {
   });
 
   return (
-    <box spacing={8} hexpand cssClasses={["menu__button-row"]}>
+    <box spacing={8} hexpand cssClasses={["p-1", "rounded-lg", "transition-all", "duration-200", "hover:bg-white/[0.04]"]}>
       <button
         cssClasses={wifiClasses}
         onClicked={() => {
           net.wifi.set_enabled(!net.wifi.get_enabled());
         }}
       >
-        <label cssClasses={["menu__button-icon"]}>{wifiIcon}</label>
+        <label cssClasses={["text-base"]}>{wifiIcon}</label>
       </button>
       <box vertical halign={Gtk.Align.START} hexpand>
-        <label halign={Gtk.Align.START} cssClasses={["label--primary"]}>Wi-Fi</label>
-        <label halign={Gtk.Align.START} cssClasses={["label--secondary"]}>Sipp_Wifi</label>
+        <label halign={Gtk.Align.START} cssClasses={["font-bold", "text-sm"]}>Wi-Fi</label>
+        <label halign={Gtk.Align.START} cssClasses={["text-xs", "opacity-70"]}>Sipp_Wifi</label>
       </box>
     </box>
   );
@@ -52,8 +52,8 @@ function BluetoothButton() {
 
   const bluetoothClasses = bind(bluetooth, "isPowered").as((powered) =>
     powered
-      ? ["menu__bluetooth-btn", "menu__bluetooth-btn--enabled"]
-      : ["menu__bluetooth-btn", "menu__bluetooth-btn--disabled"]
+      ? ["bg-primary", "text-on_primary", "rounded-lg", "p-2", "min-w-[32px]", "min-h-[32px]", "transition-all", "duration-200", "border", "border-white/15"]
+      : ["bg-white/[0.06]", "rounded-lg", "p-2", "min-w-[32px]", "min-h-[32px]", "transition-all", "duration-200", "hover:bg-white/[0.12]"]
   );
 
   const bluetoothIcon = bind(bluetooth, "isPowered").as((powered) =>
@@ -65,18 +65,18 @@ function BluetoothButton() {
   );
 
   return (
-    <box spacing={12} hexpand cssClasses={["menu__button-row"]}>
+    <box spacing={12} hexpand cssClasses={["p-1", "rounded-lg", "transition-all", "duration-200", "hover:bg-white/[0.04]"]}>
       <button
         cssClasses={bluetoothClasses}
         onClicked={() => {
           bluetooth.toggle();
         }}
       >
-        <label cssClasses={["menu__button-icon"]}>{bluetoothIcon}</label>
+        <label cssClasses={["text-base"]}>{bluetoothIcon}</label>
       </button>
       <box vertical halign={Gtk.Align.START} hexpand>
-        <label halign={Gtk.Align.START} cssClasses={["label--primary"]}>Bluetooth</label>
-        <label halign={Gtk.Align.START} cssClasses={["label--secondary"]}>{bluetoothStatus}</label>
+        <label halign={Gtk.Align.START} cssClasses={["font-bold", "text-sm"]}>Bluetooth</label>
+        <label halign={Gtk.Align.START} cssClasses={["text-xs", "opacity-70"]}>{bluetoothStatus}</label>
       </box>
     </box>
   );
@@ -87,28 +87,28 @@ export function Menu() {
   const volume = new Volume();
 
   return (
-    <menubutton cssClasses={["menu"]}>
-      <label cssClasses={["menu__trigger-icon"]}>{"󰣇"}</label>
-      <popover cssClasses={["menu__popover"]}>
-        <box widthRequest={420} orientation={1} cssClasses={["menu__popover-container"]}>
+    <menubutton cssClasses={["bg-transparent", "rounded-lg", "px-3", "py-1", "m-0.5", "transition-all", "duration-200", "hover:bg-black/50"]}>
+      <label cssClasses={["text-lg"]}>{"󰣇"}</label>
+      <popover >
+        <box widthRequest={420} orientation={1}>
           <box spacing={8}>
-            <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
+            <box vertical hexpand spacing={4} cssClasses={["bg-black/[0.08]", "rounded-xl", "p-4", "border", "border-white/[0.06]", "transition-all", "duration-200"]}>
               <WifiButton />
               <BluetoothButton />
             </box>
-            <box vertical hexpand spacing={4} cssClasses={["menu__popover-panel"]}>
-              <button cssClasses={["menu__nightmode-btn"]}>
-                  <label cssClasses={["menu__nightmode-icon"]}>󰃚</label>
+            <box vertical hexpand spacing={4} cssClasses={["bg-black/[0.08]", "rounded-xl", "p-4", "border", "border-white/[0.06]", "transition-all", "duration-200"]}>
+              <button cssClasses={["w-full", "bg-white/[0.08]", "rounded-lg", "px-3", "py-2", "transition-all", "duration-200", "hover:bg-white/[0.15]", "active:bg-white/[0.2]"]}>
+                  <label cssClasses={["text-base"]}>󰃚</label>
                   <label>Night Mode</label>
               </button>
             </box>
           </box>
-          <box cssClasses={["menu__separator"]} />
-          <box vertical spacing={8} cssClasses={["menu__popover-panel"]}>
+          <box cssClasses={["my-1", "min-h-0", "bg-white/[0.08]"]} />
+          <box vertical spacing={8} cssClasses={["bg-black/[0.08]", "rounded-xl", "p-4", "border", "border-white/[0.06]", "transition-all", "duration-200"]}>
             <box spacing={8}>
-              <label cssClasses={["menu__slider-icon"]}>󰃠</label>
+              <label cssClasses={["text-base", "opacity-80"]}>󰃠</label>
               <label 
-                cssClasses={["label--primary", "label--primary--title"]} 
+                cssClasses={["font-bold", "text-sm", "ml-2"]} 
                 halign={Gtk.Align.START}
                 hexpand>Display</label>
             </box>
@@ -120,12 +120,12 @@ export function Menu() {
               }}
             />
           </box>
-          <box cssClasses={["menu__separator"]} />
-          <box vertical spacing={8} cssClasses={["menu__popover-panel"]}>
+          <box cssClasses={["my-1", "min-h-0", "bg-white/[0.08]"]} />
+          <box vertical spacing={8} cssClasses={["bg-black/[0.08]", "rounded-xl", "p-4", "border", "border-white/[0.06]", "transition-all", "duration-200"]}>
             <box spacing={8}>
-              <label cssClasses={["menu__slider-icon"]}>󰕾</label>
+              <label cssClasses={["text-base", "opacity-80"]}>󰕾</label>
               <label 
-                cssClasses={["label--primary", "label--primary--title"]} 
+                cssClasses={["font-bold", "text-sm", "ml-2"]} 
                 halign={Gtk.Align.START}
                 hexpand>Sound</label>
             </box>

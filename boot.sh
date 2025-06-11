@@ -3,7 +3,7 @@ set -e
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
 sudo pacman -Syu > /dev/null
-sudo pacman -S --noconfirm --needed git base-devel >/dev/null
+sudo pacman -S --noconfirm --needed git base-devel nushell >/dev/null
 
 echo "Cloning Omakub..."
 rm -rf ~/.local/share/omakase
@@ -20,4 +20,4 @@ cd -
 # fi
 
 echo "Installation starting..."
-source ~/.local/share/omakase/install.sh
+nu ~/.local/share/omakase/install.nu

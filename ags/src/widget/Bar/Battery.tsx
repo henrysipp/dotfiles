@@ -25,7 +25,8 @@ export default function Battery() {
       else if (percent >= 10) icon = "󰁻";
       else icon = "󰁺";
 
-      return `${icon}  ${percent}%`;
+      return icon;
+      // return `${icon}  ${percent}%`;
     }
   );
 
@@ -34,27 +35,27 @@ export default function Battery() {
     <button
       cssClasses={bind(powerProfiles, "activeProfile").as((active) =>
         active === profile.profile
-          ? ["battery__profile-btn", "battery__profile-btn--active"]
-          : ["battery__profile-btn", "battery__profile-btn--inactive"]
+          ? ["w-full", "p-3", "rounded-lg", "bg-primary", "text-on_primary", "hover:opacity-90", "transition-all", "duration-200"]
+          : ["w-full", "p-3", "rounded-lg", "bg-transparent", "hover:bg-black/10", "transition-all", "duration-200"]
       )}
       onClicked={() => {
         powerProfiles.set_active_profile(profile.profile);
       }}
     >
       <box spacing={8}>
-        <label cssClasses={["battery__profile-icon"]}>
+        <label cssClasses={["text-2xl", "min-w-[32px]", "text-center"]}>
           {profile.profile === "power-saver" ? "󰌪" : profile.profile === "balanced" ? "󰗑" : "󱐋"}
         </label>
         <box vertical halign={Gtk.Align.START}>
           <label
-            cssClasses={["label--primary"]}
+            cssClasses={["font-bold", "text-sm"]}
             halign={Gtk.Align.START}
           >
             {profile.profile.charAt(0).toUpperCase() +
               profile.profile.slice(1).replace("-", " ")}
           </label>
           <label
-            cssClasses={["label--secondary"]}
+            cssClasses={["text-xs", "opacity-70"]}
             halign={Gtk.Align.START}
           >
             {profile.profile === "power-saver"
@@ -69,17 +70,17 @@ export default function Battery() {
   ));
 
   return (
-    <menubutton cssClasses={["battery"]}>
+    <menubutton cssClasses={["bg-transparent", "rounded-lg", "px-3", "py-1", "m-0.5", "transition-all", "duration-200", "hover:bg-black/50"]}>
       <label>{bind(batteryDisplay)}</label>
-      <popover cssClasses={["battery__popover"]}>
-        <box orientation={1} cssClasses={["battery__popover-container"]}>
+      <popover>
+        <box orientation={1} cssClasses={["min-w-[280px]", "p-3"]}>
           {/* <label
             cssClasses={["label--primary", "label--primary--title"]}
             halign={Gtk.Align.START}
           >
             Power Profiles
           </label> */}
-          <box vertical spacing={4}>
+          <box vertical cssClasses={["space-y-1"]}>
             {profileButtons}
           </box>
         </box>
