@@ -1,6 +1,7 @@
 {
     "name": "astal-shell",
     "dependencies": {
-        "astal": "/usr/share/astal/gjs"
+        "astal": "/usr/share/astal/gjs",
+        "tailwindcss": "^4.1.9"
     }
 }
