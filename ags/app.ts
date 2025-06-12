@@ -12,6 +12,7 @@ const style = exec("npx tailwindcss -i src/styles/main.css")
   
 App.start({
     css: style,
+    // gtkTheme: "Adwaita-dark",
     main() {
         App.get_monitors().map(Bar)
         // App.get_monitors().map(Dock)

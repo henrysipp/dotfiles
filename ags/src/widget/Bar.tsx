@@ -27,7 +27,7 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
           <Battery />
           <Sound />
           <DateTime />
-          {/* <Menu /> */}
+          <Menu />
         </box>
       </centerbox>
     </window>

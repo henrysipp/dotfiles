@@ -10,13 +10,12 @@ export default function Hyprland() {
     "text-lg",
     "font-bold",
     "text-center",
-    "transition-all",
-    "duration-200",
+    "animate",
   ]
   const activeClasses = [
     ...common,
-    "bg-emerald-700",
-    "text-emerald-100",
+    "bg-primary",
+    "text-on-primary",
   ]
   const inactiveClasses = [
     ...common,

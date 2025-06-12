@@ -48,7 +48,7 @@ export default function Dock(gdkmonitor: Gdk.Monitor) {
                 .map((app) => {
                   return (
                     <button
-                      cssClasses={["bg-transparent", "rounded-lg", "m-1", "p-2", "transition-all", "duration-200", "hover:bg-white/10"]}
+                      cssClasses={["bg-transparent", "rounded-lg", "m-1", "p-2", "animate", "hover:bg-white/10"]}
                       onClicked={() => app.launch()}
                       tooltip={app.name}
                     >

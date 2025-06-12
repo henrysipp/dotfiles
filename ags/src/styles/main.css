@@ -39,11 +39,11 @@ button {
 }
 
 label {
-  /* @apply text-on_surface; */
+  /* @apply text-primary; */
 }
 
 tooltip.background {
-  @apply bg-surface_container_lowest rounded-lg text-on_surface m-2 p-2;
+  /* @apply bg-red-300; */
 }
 
 tooltip label {
@@ -51,7 +51,10 @@ tooltip label {
 }
 
 popover.background {
-  @apply mt-2;
+}
+
+popover contents, popover arrow {
+  @apply bg-canvas;
 }
 
 .unset slider {
@@ -71,14 +74,13 @@ highlight {
 }
 
 levelbar>trough>block {
-  @apply bg-on_secondary rounded-none;
+  /* @apply bg-on_secondary rounded-none; */
 }
 
 levelbar>trough>block.filled {
-  @apply bg-secondary;
+  /* @apply bg-secondary; */
 }
 
-.text-shadow {
-  text-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
-  @apply text-white/80;
+.animate {
+  @apply transition-all duration-200;
 }

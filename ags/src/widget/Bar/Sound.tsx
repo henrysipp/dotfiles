@@ -19,7 +19,7 @@ export default function Sound() {
 
   return (
     <button 
-      cssClasses={["bg-transparent", "rounded-lg", "px-3", "py-1", "m-0.5", "transition-all", "duration-200", "hover:bg-black/50"]}
+      cssClasses={["bg-transparent", "rounded-lg", "px-3", "py-1", "m-0.5", "animate", "hover:bg-black/50"]}
       onClicked={() => volume.toggleMute()}
     >
       <label>{bind(soundDisplay)}</label>
