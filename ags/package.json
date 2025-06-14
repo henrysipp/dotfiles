@@ -1,7 +1,11 @@
 {
     "name": "astal-shell",
     "dependencies": {
+        "@tailwindcss/cli": "^4.1.10",
         "astal": "/usr/share/astal/gjs",
         "tailwindcss": "^4.1.9"
+    },
+    "devDependencies": {
+        "typescript": "^5.8.3"
     }
 }
