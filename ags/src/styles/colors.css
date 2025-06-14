@@ -1,0 +1,29 @@
+@theme {
+  /* Main Theme Color */
+  --color-primary: theme("colors.emerald.600");
+
+  /* Text Colors */
+  --color-ink-primary: theme("colors.gray.950");
+  --color-ink-secondary: theme("colors.gray.400");
+  --color-on-primary: theme("colors.emerald.100");
+  --color-on-color: theme("colors.white");
+  
+  /* Background Colors */
+  --color-background-primary: theme("colors.white");
+  --color-background-secondary: theme("colors.gray.100");
+  --color-canvas: theme("colors.white");
+  --color-canvas-secondary: theme("colors.gray.100");
+  
+  /* Separators */
+  --color-separator: theme("colors.gray.200");
+  
+  /* Icons */
+  --color-icon-primary: theme("colors.black");
+  --color-icon-secondary: theme("colors.gray.600");
+  --color-icon-on-color: theme("colors.white");
+  
+  /* Utilities */
+  --color-press-highlight: rgba(0, 0, 0, 0.1); /* black_10 equivalent */
+  --color-dimmer: rgba(0, 0, 0, 0.7); /* black_70 equivalent */
+
+}

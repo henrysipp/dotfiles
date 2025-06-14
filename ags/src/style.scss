@@ -1,0 +1,300 @@
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+$fg-color: #{"@theme_fg_color"};
+$bg-color: #{"@theme_bg_color"};
+$selected-color: #{"@theme_selected_bg_color"};
+$selected-fg-color: #{"@theme_selected_fb_color"};
+
+// Common button styles
+@mixin button-base {
+  background: transparent;
+  border-radius: 8px;
+  transition: all 200ms ease;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@mixin button-square($size: 24px) {
+  min-width: $size;
+  min-height: $size;
+  text-align: center;
+}
+
+@mixin button-active {
+  background-color: $selected-color;
+  color: $selected-fg-color;
+  
+  &:hover {
+    opacity: 0.9;
+    // transform: scale(1.02);
+  }
+}
+
+// Common label styles
+.label--primary {
+  font-weight: bold;
+  font-size: 14px;
+  
+  &--title {
+    margin: 0 8px;
+  }
+}
+
+.label--secondary {
+  font-weight: normal;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+window.Bar {
+  background: transparent;
+  color: white; // $fg-color;
+  font-weight: bold;
+
+  > centerbox {
+    // background: $bg-color;
+    border-radius: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  button,
+  menubutton > button {
+    @include button-base;
+    margin: 2px;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .hypr-button {
+    background: transparent;
+    // background: $bg-color;
+  }
+  .hypr-button--active {
+    // background: $selected-color;
+    background: black;
+    color: $selected-fg-color;
+  }
+
+  .tray {
+    button {
+      background: transparent;
+    }
+  }
+
+
+  .menu {
+    &__trigger-icon {
+      font-size: 18px;
+    }
+    
+    &__popover-container {
+      // padding: 12px;
+    }
+    
+    &__popover-panel {
+      // margin-bottom: 12px;
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 200ms ease;
+      
+      // &:hover {
+      //   background: rgba(0, 0, 0, 0.12);
+      //   border-color: rgba(255, 255, 255, 0.1);
+      // }
+      
+      // &:last-child {
+      //   margin-bottom: 0;
+      // }
+    }
+    
+    &__button-row {
+      transition: all 200ms ease;
+      padding: 4px;
+      border-radius: 8px;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.04);
+      }
+    }
+    
+    &__button-icon {
+      font-size: 16px;
+    }
+    
+    &__wifi-btn {
+      @include button-base;
+      @include button-square(32px);
+      border: 1px solid transparent;
+      transition: all 200ms ease;
+      
+      &--connected {
+        @include button-active;
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      
+      &--disconnected {
+        background: rgba(255, 255, 255, 0.06);
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.12);
+        }
+      }
+    }
+    
+    &__bluetooth-btn {
+      @include button-base;
+      @include button-square(32px);
+      border: 1px solid transparent;
+      transition: all 200ms ease;
+      
+      &--enabled {
+        @include button-active;
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      
+      &--disabled {
+        background: rgba(255, 255, 255, 0.06);
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.12);
+        }
+      }
+    }
+    
+    &__nightmode-btn {
+      @include button-base;
+      width: 100%;
+      // padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.08);
+      transition: all 200ms ease;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      
+      &:active {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+    
+    &__nightmode-icon {
+      font-size: 16px;
+    }
+    
+    &__slider-icon {
+      font-size: 16px;
+      opacity: 0.8;
+    }
+    
+    &__separator {
+      margin: 4px 0;
+      min-height: 0px;
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    scale {
+      margin-top: 4px;
+      trough {
+        min-height: 16px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 200ms ease;
+        
+        highlight {
+          background: white;
+          border-radius: 8px;
+          transition: all 200ms ease;
+        }
+      }
+      
+      slider {
+        min-width: 24px;
+        min-height: 24px;
+        margin: -5px 0;
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 200ms ease;
+        
+        // &:hover {
+        //   min-width: 18px;
+        //   min-height: 18px;
+        //   margin: -6px 0;
+        //   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        // }
+      }
+    }
+  }
+
+  .battery {
+    &__popover-container {
+      // margin: 12px;
+      min-width: 280px;
+    }
+    
+    &__profile-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      
+      &--inactive {
+        background: transparent;
+        
+        &:hover {
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+      
+      &--active {
+        @include button-active;
+        
+        &:hover {
+          background: $selected-color;
+          opacity: 0.9;
+        }
+      }
+    }
+    
+    &__profile-icon {
+      font-size: 24px;
+      min-width: 32px;
+    }
+  }
+}
+
+window.Dock {
+  background: transparent;
+  
+  .dock {
+    .dock-content {
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 12px;
+      padding: 8px;
+      margin-bottom: 4px;
+    }
+    
+    .dock-button {
+      @include button-base;
+      margin: 4px;
+      padding: 8px;
+    }
+    
+    .dock-trigger {
+      min-height: 4px;
+      max-height: 4px;
+      height: 4px;
+      /* Prevent the trigger from expanding */
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+  }
+}

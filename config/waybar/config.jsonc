@@ -1,0 +1,40 @@
+// -*- mode: jsonc -*-
+{
+
+  // Include modules files
+  "include": [
+    "~/.config/waybar/modules.jsonc"
+  ],
+
+  // Make the bar as the top layer
+  "layer": "top",
+
+  // Make the bar appear on the top
+  "position": "top",
+  "mode": "dock",
+
+  // Base styling for outer container
+  "margin-top": 8,
+  "margin-bottom": 0,
+  "margin-left": 8,
+  "margin-right": 8,
+
+  // Modules!
+  "modules-left": [
+    // "cpu",
+    // "custom/cpu",
+    // "custom/gpu",
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+  ],
+
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "battery",
+    "clock",
+    "custom/power"
+  ],
+}
