@@ -1,5 +1,6 @@
+#!/usr/bin/env bash
+REAL_USER=${SUDO_USER:-$USER}
+REAL_HOME=$(eval echo ~$REAL_USER)
 
-sudo -u $SUDO_USER -H bash << EOF
-  rm -rf ~/.config/ags
-  cp -r "${PROJECT_ROOT}/ags" ~/.config/ags
-EOF
+sudo -u $REAL_USER rm -rf "$REAL_HOME/.config/ags"
+sudo -u $REAL_USER cp -r "$PROJECT_ROOT/ags" "$REAL_HOME/.config/ags"
